@@ -18,7 +18,7 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500">
+    <div className="flex items-center justify-center min-h-screen bg-bg-[#ffffff]">
       <div className="w-full max-w-lg p-8 bg-white rounded-xl shadow-lg">
         {/* Logo */}
         <div className="flex justify-center">
