@@ -1,13 +1,15 @@
-import "./App.css";
+import { useEffect, useState } from "react";
+import Router from "./route/Router";
+import PublicRoute from "./route/routes/PublicRoute";
 
-function App() {
-  return (
-    <>
-      <div>
-        <h1 className="">Hello</h1>
-      </div>
-    </>
-  );
-}
+const App = () => {
+  const [allRoutes, setAllRoutes] = useState([...PublicRoute]);
+
+  useEffect(() => {
+    setAllRoutes([...allRoutes]);
+  }, []);
+
+  return <Router allRoutes={allRoutes} />;
+};
 
 export default App;
