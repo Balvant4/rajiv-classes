@@ -3,6 +3,7 @@ import MainButton from "../../components/MainButton";
 import { MdEmail, MdLock } from "react-icons/md";
 import logo from "../../../public/images/logo.png";
 import { useCallback, useState } from "react";
+import SocialButtons from "../../components/SocialButtons";
 
 const Login = () => {
   // State initialization
@@ -48,6 +49,21 @@ const Login = () => {
           {/* Submit Button */}
           <MainButton text="Login" className="my-4" />
         </form>
+        <p className="mt-6 text-sm text-center text-gray-600">
+          Don't have an account?{" "}
+          <a href="/register" className="text-indigo-500 underline">
+            Sign Up
+          </a>
+        </p>
+        <div className="flex items-center my-6">
+          <hr className="w-full border-gray-300" />
+          <span className="px-2 text-gray-500">Or</span>
+          <hr className="w-full border-gray-300" />
+        </div>
+        <SocialButtons
+          onGoogleClick={() => alert("Google Signup")}
+          onFacebookClick={() => alert("Facebook Signup")}
+        />
       </div>
     </div>
   );

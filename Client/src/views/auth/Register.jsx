@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputForm from "../../components/InputForm";
 import Select from "react-select";
 import MainButton from "../../components/MainButton";
+import SocialButtons from "../../components/SocialButtons";
 
 const Register = () => {
   const options = [
@@ -59,7 +60,7 @@ const Register = () => {
   return (
     <div className="flex  bg-white justify-center items-center  xl:h-screen h-auto">
       <div className="w-full max-w-4xl p-6 bg-gray-100 rounded-lg shadow-md">
-        <h1 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl text-center">
+        <h1 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl text-center">
           Welcome to Rajiv Classes!
         </h1>
         <p className="text-center text-gray-600 mt-2 leading-relaxed">
@@ -150,6 +151,21 @@ const Register = () => {
             <MainButton text="Submit" type="submit" />
           </div>
         </form>
+        <p className="mt-4 text-sm text-center text-gray-600">
+          Already have an account?{" "}
+          <a href="/login" className="text-indigo-500 underline">
+            Login
+          </a>
+        </p>
+        <div className="flex items-center my-3">
+          <hr className="w-full border-gray-300" />
+          <span className="px-2 text-gray-500">Or</span>
+          <hr className="w-full border-gray-300" />
+        </div>
+        <SocialButtons
+          onGoogleClick={() => alert("Google Signup")}
+          onFacebookClick={() => alert("Facebook Signup")}
+        />
       </div>
     </div>
   );
