@@ -4,6 +4,7 @@ import { MdEmail, MdLock } from "react-icons/md";
 import logo from "../../../public/images/logo.png";
 import { useCallback, useState } from "react";
 import SocialButtons from "../../components/SocialButtons";
+import Header from "../../layout/Header";
 
 const Login = () => {
   // State initialization
@@ -20,6 +21,7 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#ffffff]">
+      <Header />
       <div className="w-full max-w-lg p-8 bg-white rounded-xl shadow-lg">
         {/* Logo */}
         <div className="flex justify-center">
@@ -47,7 +49,7 @@ const Login = () => {
             onChange={inputHandle}
           />
           {/* Submit Button */}
-          <MainButton text="Login" className="my-4" />
+          <MainButton text="Login" className="my-4 w-full" />
         </form>
         <p className="mt-6 text-sm text-center text-gray-600">
           Don't have an account?{" "}

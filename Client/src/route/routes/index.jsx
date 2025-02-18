@@ -1,12 +1,12 @@
 import React from "react";
 import MainLayout from "../../layout/MainLayout";
-import PrivateRoute from "./PrivateRoute";
+import UserPublicRoute from "./UserPublicRoute";
 
 const getRoutes = () => {
   return {
     path: "/",
     element: <MainLayout />,
-    children: PrivateRoute,
+    children: UserPublicRoute,
   };
 };
 

@@ -46,7 +46,7 @@ const AdminLogin = () => {
             onChange={inputHandle}
           />
           {/* Submit Button */}
-          <MainButton text="Login" className="my-4" />
+          <MainButton text="Login" className="my-4 w-full" />
         </form>
       </div>
     </div>

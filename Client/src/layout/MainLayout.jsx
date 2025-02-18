@@ -3,9 +3,9 @@ import Header from "./Header";
 
 function MainLayout() {
   return (
-    <div className=" bg-bgmain w-full min-h-screen">
+    <div>
       <Header />
-      <div className=" ml-0 lg:ml-[260px] pt-[95px] transition-all">
+      <div>
         <Outlet />
       </div>
     </div>

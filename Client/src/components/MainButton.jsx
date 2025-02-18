@@ -14,7 +14,7 @@ function MainButton({ text, className, onClick, loader }) {
       onClick={onClick}
       disabled={loader}
       type="submit"
-      className={`w-full px-4 py-3 text-white font-medium bg-indigo-500 rounded-lg hover:bg-indigo-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={` px-4 py-3 text-white font-medium bg-indigo-500 rounded-lg hover:bg-indigo-600 transition duration-300 disabled:opacity-50  cursor-pointer ${className}`}
     >
       {loader ? (
         <PropagateLoader color="#fff" cssOverride={overrideStyle} />

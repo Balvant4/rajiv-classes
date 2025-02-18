@@ -3,6 +3,7 @@ import InputForm from "../../components/InputForm";
 import Select from "react-select";
 import MainButton from "../../components/MainButton";
 import SocialButtons from "../../components/SocialButtons";
+import Header from "../../layout/Header";
 
 const Register = () => {
   const options = [
@@ -58,7 +59,8 @@ const Register = () => {
   };
 
   return (
-    <div className="flex  bg-white justify-center items-center  xl:h-screen h-auto">
+    <div className="flex  bg-white justify-center items-center  xl:h-screen h-auto mt-10">
+      <Header />
       <div className="w-full max-w-4xl p-6 bg-gray-100 rounded-lg shadow-md">
         <h1 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl text-center">
           Welcome to Rajiv Classes!
@@ -148,7 +150,7 @@ const Register = () => {
 
           {/* Submit Button */}
           <div className="mt-6 text-center">
-            <MainButton text="Submit" type="submit" />
+            <MainButton text="Submit" type="submit" className="w-full" />
           </div>
         </form>
         <p className="mt-4 text-sm text-center text-gray-600">
