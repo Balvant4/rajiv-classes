@@ -3,7 +3,7 @@ import MainButton from "./MainButton";
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 py-12 bg-gray-100 md:h-screen md:mt-0 mt-10">
+    <section className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-16 py-12 bg-gray-100 xl:h-screen  md:mt-20 xl:mt-10 mt-5">
       {/* Left Content */}
       <div className="text-center md:text-left max-w-lg">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
