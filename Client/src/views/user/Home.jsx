@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../../components/Hero";
 import Testimonials from "../../components/Testimonials";
 import Banner from "../../components/Banner";
+import Banner2 from "../../components/Banner2";
 
 const Home = () => {
   return (
@@ -63,6 +64,8 @@ const Home = () => {
         imgClassName="w-80 md:w-[40rem] md:h-[20rem]"
         reverseLayout={false}
       />
+
+      <Banner2 />
     </div>
   );
 };
