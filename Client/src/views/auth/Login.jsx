@@ -49,7 +49,10 @@ const Login = () => {
             onChange={inputHandle}
           />
           {/* Submit Button */}
-          <MainButton text="Login" className="my-4 w-full" />
+          <MainButton
+            text="Login"
+            className="my-4 w-full bg-indigo-500  hover:bg-indigo-600 rounded-xl"
+          />
         </form>
         <p className="mt-6 text-sm text-center text-gray-600">
           Don't have an account?{" "}

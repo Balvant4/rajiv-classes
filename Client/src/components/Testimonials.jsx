@@ -139,7 +139,10 @@ const Testimonials = () => {
       {/* Read More Button */}
       <div className="flex justify-center mt-5">
         <Link to="/wall-of-love">
-          <MainButton text="Read More Testimonials" />
+          <MainButton
+            text="Read More Testimonials"
+            className="bg-[#f04e23] hover:bg-[#d9441f] rounded-xl"
+          />
         </Link>
       </div>
     </section>

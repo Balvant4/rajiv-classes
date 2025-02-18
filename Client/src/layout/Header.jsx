@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import UserPublicRoute from "../route/routes/UserPublicRoute";
+import MainButton from "../components/MainButton";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,11 +40,12 @@ export default function Header() {
         </div>
 
         {/* Login Button */}
-        <Link
-          to="/login"
-          className="hidden md:block bg-blue-600 text-white font-medium px-5 py-2 rounded-full shadow-md hover:bg-blue-700 transition"
-        >
-          Login
+        <Link to="/login">
+          <MainButton
+            text="Login"
+            className="bg-[#f04e23] hover:bg-[#d9441f] rounded-3xl"
+            onClick={() => setIsOpen(false)}
+          />
         </Link>
 
         {/* Mobile Menu Button */}
@@ -108,11 +110,12 @@ export default function Header() {
               </div>
 
               {/* Login Button */}
-              <Link
-                to="/login"
-                className="mt-4 bg-blue-600 text-white font-medium py-3 text-center rounded-full shadow-md hover:bg-blue-700 transition"
-                onClick={() => setIsOpen(false)}
-              >
+              <Link to="/login">
+                <MainButton
+                  text="Login"
+                  className="bg-[#f04e23] hover:bg-[#d9441f]"
+                  onClick={() => setIsOpen(false)}
+                />
                 Login
               </Link>
             </motion.nav>

@@ -43,7 +43,10 @@ const Testimonials2 = () => {
         ))}
         <div className=" flex justify-center items-center md:hidden ">
           <Link to="/">
-            <MainButton text="Back to Home Page" />
+            <MainButton
+              text="Back to Home Page"
+              className="bg-[#f04e23] hover:bg-[#d9441f] rounded-xl"
+            />
           </Link>
         </div>
       </div>

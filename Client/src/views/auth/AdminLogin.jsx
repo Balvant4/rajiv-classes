@@ -46,7 +46,10 @@ const AdminLogin = () => {
             onChange={inputHandle}
           />
           {/* Submit Button */}
-          <MainButton text="Login" className="my-4 w-full" />
+          <MainButton
+            text="Login"
+            className="my-4 w-full bg-indigo-500  hover:bg-indigo-600 rounded-xl"
+          />
         </form>
       </div>
     </div>
