@@ -1,6 +1,7 @@
 import Testimonials2 from "../../components/Testimonials2";
 import About from "../../views/user/About";
 import Blog from "../../views/user/Blog";
+import ContactUs from "../../views/user/ContactUs";
 import Home from "../../views/user/Home";
 import Service from "../../views/user/Service";
 
@@ -24,6 +25,11 @@ const UserPublicRoute = [
     path: "/blog",
     element: <Blog />,
     label: "Blog",
+  },
+  {
+    path: "/contact",
+    element: <ContactUs />,
+    label: "Contact",
   },
   {
     path: "/wall-of-love",
