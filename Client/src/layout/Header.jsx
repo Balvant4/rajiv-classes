@@ -4,6 +4,7 @@ import { Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import UserPublicRoute from "../route/routes/UserPublicRoute";
 import MainButton from "../components/MainButton";
+import SearchBar from "../components/SearchBar";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,15 +31,7 @@ export default function Header() {
         </nav>
 
         {/* Search Input */}
-        <div className="hidden md:flex items-center bg-gray-100 px-3 py-2 rounded-full shadow-inner border border-gray-300">
-          <Search className="h-5 w-5 text-gray-500" />
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-transparent outline-none px-2 text-sm w-36"
-          />
-        </div>
-
+        <SearchBar placeholder="Search" />
         {/* Login Button */}
         <Link to="/login">
           <MainButton
@@ -113,7 +106,7 @@ export default function Header() {
               <Link to="/login">
                 <MainButton
                   text="Login"
-                  className="bg-[#f04e23] hover:bg-[#d9441f]"
+                  className="bg-[#f04e23] hover:bg-[#d9441f] "
                   onClick={() => setIsOpen(false)}
                 />
                 Login
