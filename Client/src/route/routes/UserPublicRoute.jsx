@@ -16,16 +16,7 @@ const UserPublicRoute = [
     element: <About />,
     label: "About",
   },
-  {
-    path: "/services",
-    element: <Service />,
-    label: "Services",
-  },
-  {
-    path: "/blog",
-    element: <Blog />,
-    label: "Blog",
-  },
+
   {
     path: "/contact",
     element: <ContactUs />,

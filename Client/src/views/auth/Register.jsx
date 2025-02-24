@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InputForm from "../../components/InputForm";
 import Select from "react-select";
 import MainButton from "../../components/MainButton";
 import SocialButtons from "../../components/SocialButtons";
 import Header from "../../layout/Header";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Register = () => {
   const options = [
@@ -21,6 +23,7 @@ const Register = () => {
     email: "",
     phoneNumber: "",
     address: "",
+    selectedDate: new Date(), // Initialize with today's date
     category: [], // Changed to an array for multiple selections
   });
 
@@ -41,6 +44,14 @@ const Register = () => {
     }));
   };
 
+  // Handle Date Picker change
+  const handleDateChange = (date) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      selectedDate: date,
+    }));
+  };
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +60,7 @@ const Register = () => {
     // Convert selected categories to an array of values if needed
     const formattedData = {
       ...formData,
+      selectedDate: formData.selectedDate.toISOString().split("T")[0], // Format date
       category: formData.category.map((item) => item.value), // Extract only values
     };
 
@@ -59,18 +71,14 @@ const Register = () => {
   };
 
   return (
-    <div className="flex  bg-white justify-center items-center  xl:h-screen h-auto mt-10">
+    <div className="flex bg-white justify-center items-center xl:h-screen h-auto mt-10 xl:mt-24">
       <Header />
       <div className="w-full max-w-4xl p-6 bg-gray-100 rounded-lg shadow-md">
         <h1 className="text-2xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl text-center">
           Welcome to Rajiv Classes!
         </h1>
         <p className="text-center text-gray-600 mt-2 leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum error
-          quisquam illum odio blanditiis ex quam aperiam provident consequuntur
-          aut quia quibusdam, non odit in placeat optio qui asperiores quos eius
-          eaque alias expedita hic. Minus magnam ratione dignissimos nemo
-          molestias reprehenderit aut beatae esse veniam, id ipsa voluptatum
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
         </p>
 
         {/* Form Start */}
@@ -146,14 +154,25 @@ const Register = () => {
                 }}
               />
             </div>
+
+            {/* Date Picker */}
+            <div className="">
+              <label className="block text-lg font-semibold">Pick a Date</label>
+              <DatePicker
+                selected={formData.selectedDate}
+                onChange={handleDateChange}
+                dateFormat="dd/MM/yyyy"
+                className="border p-2 rounded-md w-full"
+              />
+            </div>
           </div>
 
           {/* Submit Button */}
           <div className="mt-6 text-center">
             <MainButton
-              text="Submit"
+              text="SignUp"
               type="submit"
-              className="w-full bg-indigo-500  hover:bg-indigo-600 rounded-xl"
+              className="w-full bg-indigo-500 hover:bg-indigo-600 rounded-xl"
             />
           </div>
         </form>
@@ -163,15 +182,6 @@ const Register = () => {
             Login
           </a>
         </p>
-        <div className="flex items-center my-3">
-          <hr className="w-full border-gray-300" />
-          <span className="px-2 text-gray-500">Or</span>
-          <hr className="w-full border-gray-300" />
-        </div>
-        <SocialButtons
-          onGoogleClick={() => alert("Google Signup")}
-          onFacebookClick={() => alert("Facebook Signup")}
-        />
       </div>
     </div>
   );
