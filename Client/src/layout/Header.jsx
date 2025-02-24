@@ -14,7 +14,7 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <h1 className="text-2xl font-extrabold text-gray-800 tracking-wide">
-          MyLogo
+          Rajiv Classes
         </h1>
 
         {/* Desktop Navigation */}
@@ -31,12 +31,12 @@ export default function Header() {
         </nav>
 
         {/* Search Input */}
-        <SearchBar placeholder="Search" />
+        <SearchBar placeholder="Search" className=" hidden md:block" />
         {/* Login Button */}
         <Link to="/login">
           <MainButton
             text="Login"
-            className="bg-[#f04e23] hover:bg-[#d9441f] rounded-3xl"
+            className="bg-[#f04e23] hover:bg-[#d9441f] rounded-3xl hidden md:block"
             onClick={() => setIsOpen(false)}
           />
         </Link>
@@ -65,27 +65,34 @@ export default function Header() {
             />
 
             {/* Mobile Menu */}
+            {/* Mobile Menu */}
             <motion.nav
-              className="fixed top-0 right-0 w-3/4 h-full bg-white shadow-lg z-50 flex flex-col py-6 px-6 border-l"
+              className="fixed top-0 right-0 w-3/4 h-screen bg-white shadow-lg z-50 flex flex-col py-6 px-6 border-l"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3 }}
             >
-              {/* Close Button */}
-              <button
-                className="self-end mb-4"
-                onClick={() => setIsOpen(false)}
-              >
-                <X className="h-6 w-6 text-gray-700" />
-              </button>
+              <div className=" flex items-center justify-between">
+                {/* Logo */}
+                <h1 className="text-2xl font-extrabold text-gray-800 tracking-wide pb-5">
+                  Rajiv Classes
+                </h1>
+                {/* Close Button */}
+                <button
+                  className="self-end mb-4"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X className="h-6 w-6 text-gray-700" />
+                </button>
+              </div>
 
               {/* Navigation Links */}
               {UserPublicRoute.map(({ path, label }, index) => (
                 <Link
                   key={index}
                   to={path}
-                  className="block py-3 text-gray-700 font-medium hover:bg-gray-100 rounded-md transition"
+                  className="block py-3 px-3 text-gray-700 font-medium hover:bg-gray-200 rounded-md transition"
                   onClick={() => setIsOpen(false)}
                 >
                   {label}
@@ -93,23 +100,15 @@ export default function Header() {
               ))}
 
               {/* Search Input */}
-              <div className="flex items-center bg-gray-100 px-3 py-2 rounded-full shadow-inner border border-gray-300 mt-4">
-                <Search className="h-5 w-5 text-gray-500" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="bg-transparent outline-none px-2 text-sm w-full"
-                />
-              </div>
+              <SearchBar placeholder="Search" className="" />
 
               {/* Login Button */}
-              <Link to="/login">
+              <Link to="/login" className="mt-6">
                 <MainButton
                   text="Login"
                   className="bg-[#f04e23] hover:bg-[#d9441f] "
                   onClick={() => setIsOpen(false)}
                 />
-                Login
               </Link>
             </motion.nav>
           </>
